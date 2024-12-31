@@ -1,0 +1,114 @@
+test for days = 30, timeframe = 1h
+
+No more data available from Binance.
+total trades (buy + sell): 17
+[
+  {
+    timestamp: Moment<2024-12-02T13:30:00+05:30>,
+    supertrend: 236.7549574064302,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-04T02:30:00+05:30>,
+    supertrend: 219.59662799822695,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-04T21:30:00+05:30>,
+    supertrend: 241.82285198474668,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-05T14:30:00+05:30>,
+    supertrend: 223.6728523332728,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-08T14:30:00+05:30>,
+    supertrend: 241.83452527676042,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-11T15:30:00+05:30>,
+    supertrend: 213.12050059963642,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-13T11:30:00+05:30>,
+    supertrend: 232.62848324157787,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-16T04:30:00+05:30>,
+    supertrend: 216.21482471493255,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-16T15:30:00+05:30>,
+    supertrend: 224.80781380787633,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-17T14:30:00+05:30>,
+    supertrend: 211.45372406731053,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-18T10:30:00+05:30>,
+    supertrend: 226.6528516118369,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-21T10:30:00+05:30>,
+    supertrend: 187.87151813462748,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-21T17:30:00+05:30>,
+    supertrend: 199.7298634574139,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-24T01:30:00+05:30>,
+    supertrend: 178.69592570561042,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-26T12:30:00+05:30>,
+    supertrend: 200.10007988896515,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-28T21:30:00+05:30>,
+    supertrend: 185.889215057312,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-30T02:30:00+05:30>,
+    supertrend: 196.98309073724812,
+    signal: 'SELL'
+  }
+]
+Trade Profit: 8.98 with percentage: 4.07% for BUY trade: 2
+--> Buy at: 2024-12-04 02:30:00 Sell at: 2024-12-04 21:30:00 Hour dif: 19
+Trade Profit: 7.64 with percentage: 3.40% for BUY trade: 4
+--> Buy at: 2024-12-05 14:30:00 Sell at: 2024-12-08 14:30:00 Hour dif: 72
+Trade Profit: 9.37 with percentage: 4.37% for BUY trade: 6
+--> Buy at: 2024-12-11 15:30:00 Sell at: 2024-12-13 11:30:00 Hour dif: 44
+Trade Profit: 3.67 with percentage: 1.69% for BUY trade: 8
+--> Buy at: 2024-12-16 04:30:00 Sell at: 2024-12-16 15:30:00 Hour dif: 11
+Trade Profit: 7.90 with percentage: 3.72% for BUY trade: 10
+--> Buy at: 2024-12-17 14:30:00 Sell at: 2024-12-18 10:30:00 Hour dif: 20
+Trade Profit: 7.19 with percentage: 3.81% for BUY trade: 12
+--> Buy at: 2024-12-21 10:30:00 Sell at: 2024-12-21 17:30:00 Hour dif: 7
+Trade Profit: 15.68 with percentage: 8.73% for BUY trade: 14
+--> Buy at: 2024-12-24 01:30:00 Sell at: 2024-12-26 12:30:00 Hour dif: 59
+Trade Profit: 7.84 with percentage: 4.20% for BUY trade: 16
+--> Buy at: 2024-12-28 21:30:00 Sell at: 2024-12-30 02:30:00 Hour dif: 29
+Initial Balance: 100.00
+Final Balance: 168.26
+Total Trades: 8
+Total Wins: 8
+Total Losses: 0
+Total Profit: 68.26
+Total Profit: $ 68.25999999999999

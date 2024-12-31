@@ -1,0 +1,739 @@
+test for days = 30, timeframe = 5m
+
+node tests.js
+No more data available from Binance.
+total trades (buy + sell): 226
+[
+  {
+    timestamp: Moment<2024-11-30T19:20:00+05:30>,
+    supertrend: 242.4754656839891,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-01T02:10:00+05:30>,
+    supertrend: 239.2682836867534,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-01T03:35:00+05:30>,
+    supertrend: 241.17529424600173,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-01T06:00:00+05:30>,
+    supertrend: 237.5504267223311,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-01T06:25:00+05:30>,
+    supertrend: 240.79180797473072,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-01T13:55:00+05:30>,
+    supertrend: 235.2889200770477,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-01T16:00:00+05:30>,
+    supertrend: 237.63433813696844,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-01T16:55:00+05:30>,
+    supertrend: 235.73783495480433,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-01T22:30:00+05:30>,
+    supertrend: 239.1957983181691,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-02T03:10:00+05:30>,
+    supertrend: 235.10801319236413,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-02T05:25:00+05:30>,
+    supertrend: 238.74000248307598,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-02T07:05:00+05:30>,
+    supertrend: 234.19425100767694,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-02T08:25:00+05:30>,
+    supertrend: 236.7091592006126,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-02T15:25:00+05:30>,
+    supertrend: 224.6823600708719,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-02T16:05:00+05:30>,
+    supertrend: 227.56628428962637,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-02T18:55:00+05:30>,
+    supertrend: 222.0353169403337,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-02T22:05:00+05:30>,
+    supertrend: 229.78863618793704,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-03T01:25:00+05:30>,
+    supertrend: 221.43303031797132,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-03T02:30:00+05:30>,
+    supertrend: 224.68186017768542,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-03T04:30:00+05:30>,
+    supertrend: 222.3266513832457,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-03T07:25:00+05:30>,
+    supertrend: 227.10485814676366,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-03T08:00:00+05:30>,
+    supertrend: 223.1740421359632,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-03T12:25:00+05:30>,
+    supertrend: 230.40497934539783,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-03T20:20:00+05:30>,
+    supertrend: 216.47100721173496,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-04T04:55:00+05:30>,
+    supertrend: 237.82136996261656,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-04T05:55:00+05:30>,
+    supertrend: 234.00150142726244,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-04T08:20:00+05:30>,
+    supertrend: 239.6159550399721,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-04T10:40:00+05:30>,
+    supertrend: 236.8132719064541,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-04T11:30:00+05:30>,
+    supertrend: 240.19969948569695,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-04T14:55:00+05:30>,
+    supertrend: 235.205354255501,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-04T17:35:00+05:30>,
+    supertrend: 236.97224891080984,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-04T20:00:00+05:30>,
+    supertrend: 229.62431092345767,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-04T21:40:00+05:30>,
+    supertrend: 234.96076754509335,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-04T23:40:00+05:30>,
+    supertrend: 226.33213034514952,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-05T02:15:00+05:30>,
+    supertrend: 235.38711111884865,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-05T05:25:00+05:30>,
+    supertrend: 226.03672703633853,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-05T06:25:00+05:30>,
+    supertrend: 229.42717494454428,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-05T07:45:00+05:30>,
+    supertrend: 224.10507123338488,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-05T11:45:00+05:30>,
+    supertrend: 236.04844031833466,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-05T13:50:00+05:30>,
+    supertrend: 233.2205671055617,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-05T18:30:00+05:30>,
+    supertrend: 245.13775688994636,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-05T21:30:00+05:30>,
+    supertrend: 235.79035051548493,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-06T00:25:00+05:30>,
+    supertrend: 240.08558474318346,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-06T04:15:00+05:30>,
+    supertrend: 227.11031216268125,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-06T08:55:00+05:30>,
+    supertrend: 243.7419094463005,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-06T19:00:00+05:30>,
+    supertrend: 229.72500470901628,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-07T02:15:00+05:30>,
+    supertrend: 240.28549436117206,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-07T10:55:00+05:30>,
+    supertrend: 234.5194431154224,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-07T14:05:00+05:30>,
+    supertrend: 236.61260703780974,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-07T14:45:00+05:30>,
+    supertrend: 235.2149276471139,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-07T21:50:00+05:30>,
+    supertrend: 242.10256958533506,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-07T22:15:00+05:30>,
+    supertrend: 238.7344120855555,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-08T03:00:00+05:30>,
+    supertrend: 243.73020544983797,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-08T03:30:00+05:30>,
+    supertrend: 239.88389862553268,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-08T04:00:00+05:30>,
+    supertrend: 242.5519163755483,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-08T07:45:00+05:30>,
+    supertrend: 238.4570307883881,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-08T10:05:00+05:30>,
+    supertrend: 240.91958231443041,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-08T17:05:00+05:30>,
+    supertrend: 234.43621493680018,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-08T20:25:00+05:30>,
+    supertrend: 237.38991850237437,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-08T21:15:00+05:30>,
+    supertrend: 234.792949342025,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-08T22:35:00+05:30>,
+    supertrend: 237.6238466585006,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-09T01:15:00+05:30>,
+    supertrend: 234.3925605387883,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-09T02:40:00+05:30>,
+    supertrend: 235.93442110530836,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-09T03:50:00+05:30>,
+    supertrend: 234.83278672119073,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-09T05:45:00+05:30>,
+    supertrend: 237.97741342172648,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-09T11:15:00+05:30>,
+    supertrend: 230.92456820397118,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-09T11:50:00+05:30>,
+    supertrend: 233.07747138570198,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-09T13:10:00+05:30>,
+    supertrend: 228.198328121174,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-09T14:00:00+05:30>,
+    supertrend: 231.88356423627806,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-09T18:45:00+05:30>,
+    supertrend: 225.63004543206299,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-09T20:45:00+05:30>,
+    supertrend: 231.528211334271,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-10T06:00:00+05:30>,
+    supertrend: 214.31922751479345,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-10T08:00:00+05:30>,
+    supertrend: 219.01216488292184,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-10T09:10:00+05:30>,
+    supertrend: 207.78116511309958,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-10T17:10:00+05:30>,
+    supertrend: 217.56443150997063,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-10T19:30:00+05:30>,
+    supertrend: 211.48797294924483,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-10T20:50:00+05:30>,
+    supertrend: 218.71459828843774,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-11T00:40:00+05:30>,
+    supertrend: 206.5633078918042,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-11T06:05:00+05:30>,
+    supertrend: 215.0991351225778,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-11T06:20:00+05:30>,
+    supertrend: 210.9207254956408,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-12T02:15:00+05:30>,
+    supertrend: 230.50882849410235,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-12T08:25:00+05:30>,
+    supertrend: 226.53517049408956,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-12T11:40:00+05:30>,
+    supertrend: 232.5780371891594,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-12T13:55:00+05:30>,
+    supertrend: 230.14379421851646,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-12T15:30:00+05:30>,
+    supertrend: 233.44488471165266,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-12T18:20:00+05:30>,
+    supertrend: 229.59677793754753,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-12T19:05:00+05:30>,
+    supertrend: 232.75477059615594,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-12T19:45:00+05:30>,
+    supertrend: 228.57018824818272,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-13T00:05:00+05:30>,
+    supertrend: 234.3144667520825,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-13T08:05:00+05:30>,
+    supertrend: 225.23083928373418,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-13T10:00:00+05:30>,
+    supertrend: 227.49020827260233,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-13T13:50:00+05:30>,
+    supertrend: 223.38883713535319,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-13T15:05:00+05:30>,
+    supertrend: 226.11575693736,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-13T16:10:00+05:30>,
+    supertrend: 224.1428425159346,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-13T18:05:00+05:30>,
+    supertrend: 226.87131241645184,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-13T20:40:00+05:30>,
+    supertrend: 222.44591608107982,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-13T21:20:00+05:30>,
+    supertrend: 225.12731870074438,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-14T01:50:00+05:30>,
+    supertrend: 222.66916637943527,
+    signal: 'BUY'
+  },
+  {
+    timestamp: Moment<2024-12-14T12:50:00+05:30>,
+    supertrend: 227.17631557112938,
+    signal: 'SELL'
+  },
+  {
+    timestamp: Moment<2024-12-14T20:45:00+05:30>,
+    supertrend: 221.11796880468594,
+    signal: 'BUY'
+  },
+  ... 126 more items
+]
+Trade Loss: -0.24 with percentage: -0.10% for BUY trade: 2
+--> Buy at: 2024-12-01 02:10:00 Sell at: 2024-12-01 03:35:00 Hour dif: 1.4166666666666667
+Trade Profit: 0.31 with percentage: 0.13% for BUY trade: 4
+--> Buy at: 2024-12-01 06:00:00 Sell at: 2024-12-01 06:25:00 Hour dif: 0.4166666666666667
+Trade Loss: -0.05 with percentage: -0.02% for BUY trade: 6
+--> Buy at: 2024-12-01 13:55:00 Sell at: 2024-12-01 16:00:00 Hour dif: 2.0833333333333335
+Trade Profit: 0.42 with percentage: 0.18% for BUY trade: 8
+--> Buy at: 2024-12-01 16:55:00 Sell at: 2024-12-01 22:30:00 Hour dif: 5.583333333333333
+Trade Profit: 0.50 with percentage: 0.21% for BUY trade: 10
+--> Buy at: 2024-12-02 03:10:00 Sell at: 2024-12-02 05:25:00 Hour dif: 2.25
+Trade Profit: 0.03 with percentage: 0.01% for BUY trade: 12
+--> Buy at: 2024-12-02 07:05:00 Sell at: 2024-12-02 08:25:00 Hour dif: 1.3333333333333333
+Trade Profit: 0.24 with percentage: 0.11% for BUY trade: 14
+--> Buy at: 2024-12-02 15:25:00 Sell at: 2024-12-02 16:05:00 Hour dif: 0.6666666666666666
+Trade Profit: 2.45 with percentage: 1.10% for BUY trade: 16
+--> Buy at: 2024-12-02 18:55:00 Sell at: 2024-12-02 22:05:00 Hour dif: 3.1666666666666665
+Trade Profit: 0.43 with percentage: 0.20% for BUY trade: 18
+--> Buy at: 2024-12-03 01:25:00 Sell at: 2024-12-03 02:30:00 Hour dif: 1.0833333333333333
+Trade Profit: 1.14 with percentage: 0.51% for BUY trade: 20
+--> Buy at: 2024-12-03 04:30:00 Sell at: 2024-12-03 07:25:00 Hour dif: 2.9166666666666665
+Trade Profit: 2.29 with percentage: 1.02% for BUY trade: 22
+--> Buy at: 2024-12-03 08:00:00 Sell at: 2024-12-03 12:25:00 Hour dif: 4.416666666666667
+Trade Profit: 9.39 with percentage: 4.32% for BUY trade: 24
+--> Buy at: 2024-12-03 20:20:00 Sell at: 2024-12-04 04:55:00 Hour dif: 8.583333333333334
+Trade Profit: 1.58 with percentage: 0.67% for BUY trade: 26
+--> Buy at: 2024-12-04 05:55:00 Sell at: 2024-12-04 08:20:00 Hour dif: 2.4166666666666665
+Trade Profit: 0.46 with percentage: 0.19% for BUY trade: 28
+--> Buy at: 2024-12-04 10:40:00 Sell at: 2024-12-04 11:30:00 Hour dif: 0.8333333333333334
+Trade Loss: -0.34 with percentage: -0.14% for BUY trade: 30
+--> Buy at: 2024-12-04 14:55:00 Sell at: 2024-12-04 17:35:00 Hour dif: 2.6666666666666665
+Trade Profit: 1.51 with percentage: 0.65% for BUY trade: 32
+--> Buy at: 2024-12-04 20:00:00 Sell at: 2024-12-04 21:40:00 Hour dif: 1.6666666666666667
+Trade Profit: 3.52 with percentage: 1.55% for BUY trade: 34
+--> Buy at: 2024-12-04 23:40:00 Sell at: 2024-12-05 02:15:00 Hour dif: 2.5833333333333335
+Trade Profit: 0.57 with percentage: 0.25% for BUY trade: 36
+--> Buy at: 2024-12-05 05:25:00 Sell at: 2024-12-05 06:25:00 Hour dif: 1
+Trade Profit: 5.28 with percentage: 2.34% for BUY trade: 38
+--> Buy at: 2024-12-05 07:45:00 Sell at: 2024-12-05 11:45:00 Hour dif: 4
+Trade Profit: 5.22 with percentage: 2.23% for BUY trade: 40
+--> Buy at: 2024-12-05 13:50:00 Sell at: 2024-12-05 18:30:00 Hour dif: 4.666666666666667
+Trade Profit: 1.05 with percentage: 0.44% for BUY trade: 42
+--> Buy at: 2024-12-05 21:30:00 Sell at: 2024-12-06 00:25:00 Hour dif: 2.9166666666666665
+Trade Profit: 8.45 with percentage: 3.70% for BUY trade: 44
+--> Buy at: 2024-12-06 04:15:00 Sell at: 2024-12-06 08:55:00 Hour dif: 4.666666666666667
+Trade Profit: 5.09 with percentage: 2.20% for BUY trade: 46
+--> Buy at: 2024-12-06 19:00:00 Sell at: 2024-12-07 02:15:00 Hour dif: 7.25
+Trade Loss: -0.21 with percentage: -0.09% for BUY trade: 48
+--> Buy at: 2024-12-07 10:55:00 Sell at: 2024-12-07 14:05:00 Hour dif: 3.1666666666666665
+Trade Profit: 2.80 with percentage: 1.18% for BUY trade: 50
+--> Buy at: 2024-12-07 14:45:00 Sell at: 2024-12-07 21:50:00 Hour dif: 7.083333333333333
+Trade Profit: 1.60 with percentage: 0.67% for BUY trade: 52
+--> Buy at: 2024-12-07 22:15:00 Sell at: 2024-12-08 03:00:00 Hour dif: 4.75
+Trade Profit: 0.12 with percentage: 0.05% for BUY trade: 54
+--> Buy at: 2024-12-08 03:30:00 Sell at: 2024-12-08 04:00:00 Hour dif: 0.5
+Trade Profit: 0.00 with percentage: 0.00% for BUY trade: 56
+--> Buy at: 2024-12-08 07:45:00 Sell at: 2024-12-08 10:05:00 Hour dif: 2.3333333333333335
+Trade Profit: 0.35 with percentage: 0.15% for BUY trade: 58
+--> Buy at: 2024-12-08 17:05:00 Sell at: 2024-12-08 20:25:00 Hour dif: 3.3333333333333335
+Trade Profit: 0.27 with percentage: 0.11% for BUY trade: 60
+--> Buy at: 2024-12-08 21:15:00 Sell at: 2024-12-08 22:35:00 Hour dif: 1.3333333333333333
+Trade Loss: -0.57 with percentage: -0.24% for BUY trade: 62
+--> Buy at: 2024-12-09 01:15:00 Sell at: 2024-12-09 02:40:00 Hour dif: 1.4166666666666667
+Trade Profit: 0.47 with percentage: 0.20% for BUY trade: 64
+--> Buy at: 2024-12-09 03:50:00 Sell at: 2024-12-09 05:45:00 Hour dif: 1.9166666666666667
+Trade Loss: -0.15 with percentage: -0.06% for BUY trade: 66
+--> Buy at: 2024-12-09 11:15:00 Sell at: 2024-12-09 11:50:00 Hour dif: 0.5833333333333334
+Trade Profit: 0.89 with percentage: 0.39% for BUY trade: 68
+--> Buy at: 2024-12-09 13:10:00 Sell at: 2024-12-09 14:00:00 Hour dif: 0.8333333333333334
+Trade Profit: 2.43 with percentage: 1.07% for BUY trade: 70
+--> Buy at: 2024-12-09 18:45:00 Sell at: 2024-12-09 20:45:00 Hour dif: 2
+Trade Profit: 1.80 with percentage: 0.84% for BUY trade: 72
+--> Buy at: 2024-12-10 06:00:00 Sell at: 2024-12-10 08:00:00 Hour dif: 2
+Trade Profit: 5.79 with percentage: 2.77% for BUY trade: 74
+--> Buy at: 2024-12-10 09:10:00 Sell at: 2024-12-10 17:10:00 Hour dif: 8
+Trade Profit: 3.89 with percentage: 1.83% for BUY trade: 76
+--> Buy at: 2024-12-10 19:30:00 Sell at: 2024-12-10 20:50:00 Hour dif: 1.3333333333333333
+Trade Profit: 5.19 with percentage: 2.50% for BUY trade: 78
+--> Buy at: 2024-12-11 00:40:00 Sell at: 2024-12-11 06:05:00 Hour dif: 5.416666666666667
+Trade Profit: 14.22 with percentage: 6.71% for BUY trade: 80
+--> Buy at: 2024-12-11 06:20:00 Sell at: 2024-12-12 02:15:00 Hour dif: 19.916666666666668
+Trade Profit: 3.05 with percentage: 1.34% for BUY trade: 82
+--> Buy at: 2024-12-12 08:25:00 Sell at: 2024-12-12 11:40:00 Hour dif: 3.25
+Trade Profit: 0.77 with percentage: 0.33% for BUY trade: 84
+--> Buy at: 2024-12-12 13:55:00 Sell at: 2024-12-12 15:30:00 Hour dif: 1.5833333333333333
+Trade Profit: 0.66 with percentage: 0.28% for BUY trade: 86
+--> Buy at: 2024-12-12 18:20:00 Sell at: 2024-12-12 19:05:00 Hour dif: 0.75
+Trade Profit: 2.83 with percentage: 1.23% for BUY trade: 88
+--> Buy at: 2024-12-12 19:45:00 Sell at: 2024-12-13 00:05:00 Hour dif: 4.333333333333333
+Trade Loss: -0.04 with percentage: -0.02% for BUY trade: 90
+--> Buy at: 2024-12-13 08:05:00 Sell at: 2024-12-13 10:00:00 Hour dif: 1.9166666666666667
+Trade Profit: 0.38 with percentage: 0.17% for BUY trade: 92
+--> Buy at: 2024-12-13 13:50:00 Sell at: 2024-12-13 15:05:00 Hour dif: 1.25
+Trade Profit: 0.37 with percentage: 0.17% for BUY trade: 94
+--> Buy at: 2024-12-13 16:10:00 Sell at: 2024-12-13 18:05:00 Hour dif: 1.9166666666666667
+Trade Profit: 0.35 with percentage: 0.16% for BUY trade: 96
+--> Buy at: 2024-12-13 20:40:00 Sell at: 2024-12-13 21:20:00 Hour dif: 0.6666666666666666
+Trade Profit: 1.95 with percentage: 0.87% for BUY trade: 98
+--> Buy at: 2024-12-14 01:50:00 Sell at: 2024-12-14 12:50:00 Hour dif: 11
+Trade Loss: -0.42 with percentage: -0.19% for BUY trade: 100
+--> Buy at: 2024-12-14 20:45:00 Sell at: 2024-12-14 21:40:00 Hour dif: 0.9166666666666666
+Trade Profit: 3.16 with percentage: 1.46% for BUY trade: 102
+--> Buy at: 2024-12-15 02:50:00 Sell at: 2024-12-15 09:00:00 Hour dif: 6.166666666666667
+Trade Loss: -0.30 with percentage: -0.14% for BUY trade: 104
+--> Buy at: 2024-12-15 09:45:00 Sell at: 2024-12-15 11:35:00 Hour dif: 1.8333333333333333
+Trade Profit: 1.19 with percentage: 0.55% for BUY trade: 106
+--> Buy at: 2024-12-15 14:15:00 Sell at: 2024-12-15 16:20:00 Hour dif: 2.0833333333333335
+Trade Profit: 2.20 with percentage: 1.01% for BUY trade: 108
+--> Buy at: 2024-12-15 18:10:00 Sell at: 2024-12-15 23:45:00 Hour dif: 5.583333333333333
+Trade Profit: 6.84 with percentage: 3.14% for BUY trade: 110
+--> Buy at: 2024-12-16 03:50:00 Sell at: 2024-12-16 07:45:00 Hour dif: 3.9166666666666665
+Trade Profit: 0.35 with percentage: 0.16% for BUY trade: 112
+--> Buy at: 2024-12-16 11:35:00 Sell at: 2024-12-16 13:35:00 Hour dif: 2
+Trade Profit: 4.91 with percentage: 2.28% for BUY trade: 114
+--> Buy at: 2024-12-16 19:30:00 Sell at: 2024-12-17 00:50:00 Hour dif: 5.333333333333333
+Trade Loss: -0.43 with percentage: -0.20% for BUY trade: 116
+--> Buy at: 2024-12-17 03:30:00 Sell at: 2024-12-17 04:50:00 Hour dif: 1.3333333333333333
+Trade Profit: 0.58 with percentage: 0.27% for BUY trade: 118
+--> Buy at: 2024-12-17 07:35:00 Sell at: 2024-12-17 10:00:00 Hour dif: 2.4166666666666665
+Trade Profit: 10.85 with percentage: 5.06% for BUY trade: 120
+--> Buy at: 2024-12-17 11:25:00 Sell at: 2024-12-17 19:15:00 Hour dif: 7.833333333333333
+Trade Profit: 9.79 with percentage: 4.49% for BUY trade: 122
+--> Buy at: 2024-12-17 21:30:00 Sell at: 2024-12-18 02:30:00 Hour dif: 5
+Trade Profit: 2.22 with percentage: 1.00% for BUY trade: 124
+--> Buy at: 2024-12-18 05:35:00 Sell at: 2024-12-18 06:05:00 Hour dif: 0.5
+Trade Profit: 2.33 with percentage: 1.08% for BUY trade: 126
+--> Buy at: 2024-12-18 13:40:00 Sell at: 2024-12-18 17:55:00 Hour dif: 4.25
+Trade Profit: 1.01 with percentage: 0.47% for BUY trade: 128
+--> Buy at: 2024-12-18 20:50:00 Sell at: 2024-12-18 22:35:00 Hour dif: 1.75
+Trade Profit: 2.59 with percentage: 1.20% for BUY trade: 130
+--> Buy at: 2024-12-18 23:15:00 Sell at: 2024-12-19 00:35:00 Hour dif: 1.3333333333333333
+Trade Profit: 0.69 with percentage: 0.34% for BUY trade: 132
+--> Buy at: 2024-12-19 06:00:00 Sell at: 2024-12-19 07:20:00 Hour dif: 1.3333333333333333
+Trade Profit: 12.47 with percentage: 6.21% for BUY trade: 134
+--> Buy at: 2024-12-19 08:25:00 Sell at: 2024-12-19 13:40:00 Hour dif: 5.25
+Trade Loss: -0.05 with percentage: -0.02% for BUY trade: 136
+--> Buy at: 2024-12-19 16:10:00 Sell at: 2024-12-19 18:00:00 Hour dif: 1.8333333333333333
+Trade Profit: 1.12 with percentage: 0.54% for BUY trade: 138
+--> Buy at: 2024-12-19 20:00:00 Sell at: 2024-12-19 20:15:00 Hour dif: 0.25
+Trade Profit: 8.34 with percentage: 4.39% for BUY trade: 140
+--> Buy at: 2024-12-20 02:35:00 Sell at: 2024-12-20 05:40:00 Hour dif: 3.0833333333333335
+Trade Profit: 6.55 with percentage: 3.40% for BUY trade: 142
+--> Buy at: 2024-12-20 06:05:00 Sell at: 2024-12-20 10:20:00 Hour dif: 4.25
+Trade Profit: 4.21 with percentage: 2.22% for BUY trade: 144
+--> Buy at: 2024-12-20 12:30:00 Sell at: 2024-12-20 13:35:00 Hour dif: 1.0833333333333333
+Trade Profit: 22.03 with percentage: 12.35% for BUY trade: 146
+--> Buy at: 2024-12-20 18:05:00 Sell at: 2024-12-21 01:30:00 Hour dif: 7.416666666666667
+Trade Profit: 8.62 with percentage: 4.55% for BUY trade: 148
+--> Buy at: 2024-12-21 03:45:00 Sell at: 2024-12-21 08:40:00 Hour dif: 4.916666666666667
+Trade Profit: 9.07 with percentage: 4.65% for BUY trade: 150
+--> Buy at: 2024-12-21 10:05:00 Sell at: 2024-12-21 13:25:00 Hour dif: 3.3333333333333335
+Trade Profit: 5.31 with percentage: 2.95% for BUY trade: 152
+--> Buy at: 2024-12-22 01:55:00 Sell at: 2024-12-22 03:05:00 Hour dif: 1.1666666666666667
+Trade Profit: 4.02 with percentage: 2.23% for BUY trade: 154
+--> Buy at: 2024-12-22 06:05:00 Sell at: 2024-12-22 08:35:00 Hour dif: 2.5
+Trade Profit: 12.75 with percentage: 7.11% for BUY trade: 156
+--> Buy at: 2024-12-22 11:40:00 Sell at: 2024-12-22 18:35:00 Hour dif: 6.916666666666667
+Trade Profit: 4.83 with percentage: 2.68% for BUY trade: 158
+--> Buy at: 2024-12-22 21:45:00 Sell at: 2024-12-23 00:40:00 Hour dif: 2.9166666666666665
+Trade Profit: 6.02 with percentage: 3.37% for BUY trade: 160
+--> Buy at: 2024-12-23 02:15:00 Sell at: 2024-12-23 03:30:00 Hour dif: 1.25
+Trade Profit: 2.96 with percentage: 1.65% for BUY trade: 162
+--> Buy at: 2024-12-23 04:25:00 Sell at: 2024-12-23 05:45:00 Hour dif: 1.3333333333333333
+Trade Profit: 14.45 with percentage: 8.11% for BUY trade: 164
+--> Buy at: 2024-12-23 07:05:00 Sell at: 2024-12-23 10:45:00 Hour dif: 3.6666666666666665
+Trade Profit: 5.43 with percentage: 2.99% for BUY trade: 166
+--> Buy at: 2024-12-23 14:05:00 Sell at: 2024-12-23 17:40:00 Hour dif: 3.5833333333333335
+Trade Profit: 4.66 with percentage: 2.56% for BUY trade: 168
+--> Buy at: 2024-12-23 19:40:00 Sell at: 2024-12-23 20:15:00 Hour dif: 0.5833333333333334
+Trade Profit: 22.18 with percentage: 12.18% for BUY trade: 170
+--> Buy at: 2024-12-23 22:20:00 Sell at: 2024-12-24 03:15:00 Hour dif: 4.916666666666667
+Trade Profit: 5.60 with percentage: 2.97% for BUY trade: 172
+--> Buy at: 2024-12-24 09:00:00 Sell at: 2024-12-24 12:25:00 Hour dif: 3.4166666666666665
+Trade Profit: 3.65 with percentage: 1.92% for BUY trade: 174
+--> Buy at: 2024-12-24 13:20:00 Sell at: 2024-12-24 15:50:00 Hour dif: 2.5
+Trade Profit: 12.50 with percentage: 6.51% for BUY trade: 176
+--> Buy at: 2024-12-24 17:10:00 Sell at: 2024-12-24 22:15:00 Hour dif: 5.083333333333333
+Trade Profit: 11.61 with percentage: 5.96% for BUY trade: 178
+--> Buy at: 2024-12-25 02:50:00 Sell at: 2024-12-25 09:30:00 Hour dif: 6.666666666666667
+Trade Loss: -1.31 with percentage: -0.66% for BUY trade: 180
+--> Buy at: 2024-12-25 11:45:00 Sell at: 2024-12-25 12:30:00 Hour dif: 0.75
+Trade Profit: 1.53 with percentage: 0.77% for BUY trade: 182
+--> Buy at: 2024-12-25 15:45:00 Sell at: 2024-12-25 16:20:00 Hour dif: 0.5833333333333334
+Trade Profit: 1.93 with percentage: 0.98% for BUY trade: 184
+--> Buy at: 2024-12-25 19:40:00 Sell at: 2024-12-25 21:45:00 Hour dif: 2.0833333333333335
+Trade Profit: 3.23 with percentage: 1.64% for BUY trade: 186
+--> Buy at: 2024-12-25 23:10:00 Sell at: 2024-12-26 02:20:00 Hour dif: 3.1666666666666665
+Trade Profit: 3.45 with percentage: 1.76% for BUY trade: 188
+--> Buy at: 2024-12-26 04:40:00 Sell at: 2024-12-26 06:05:00 Hour dif: 1.4166666666666667
+Trade Profit: 2.28 with percentage: 1.16% for BUY trade: 190
+--> Buy at: 2024-12-26 07:50:00 Sell at: 2024-12-26 08:30:00 Hour dif: 0.6666666666666666
+Trade Loss: -0.10 with percentage: -0.05% for BUY trade: 192
+--> Buy at: 2024-12-26 17:05:00 Sell at: 2024-12-26 18:30:00 Hour dif: 1.4166666666666667
+Trade Profit: 2.32 with percentage: 1.23% for BUY trade: 194
+--> Buy at: 2024-12-26 21:45:00 Sell at: 2024-12-26 22:55:00 Hour dif: 1.1666666666666667
+Trade Profit: 3.67 with percentage: 1.95% for BUY trade: 196
+--> Buy at: 2024-12-27 03:00:00 Sell at: 2024-12-27 04:30:00 Hour dif: 1.5
+Trade Profit: 3.48 with percentage: 1.85% for BUY trade: 198
+--> Buy at: 2024-12-27 05:35:00 Sell at: 2024-12-27 10:40:00 Hour dif: 5.083333333333333
+Trade Profit: 3.10 with percentage: 1.64% for BUY trade: 200
+--> Buy at: 2024-12-27 11:30:00 Sell at: 2024-12-27 12:55:00 Hour dif: 1.4166666666666667
+Trade Profit: 12.76 with percentage: 6.80% for BUY trade: 202
+--> Buy at: 2024-12-27 13:40:00 Sell at: 2024-12-27 15:50:00 Hour dif: 2.1666666666666665
+Trade Profit: 5.22 with percentage: 2.83% for BUY trade: 204
+--> Buy at: 2024-12-27 23:05:00 Sell at: 2024-12-28 01:50:00 Hour dif: 2.75
+Trade Profit: 0.54 with percentage: 0.30% for BUY trade: 206
+--> Buy at: 2024-12-28 05:45:00 Sell at: 2024-12-28 08:20:00 Hour dif: 2.5833333333333335
+Trade Loss: -1.14 with percentage: -0.62% for BUY trade: 208
+--> Buy at: 2024-12-28 09:05:00 Sell at: 2024-12-28 10:25:00 Hour dif: 1.3333333333333333
+Trade Profit: 19.95 with percentage: 10.76% for BUY trade: 210
+--> Buy at: 2024-12-28 10:50:00 Sell at: 2024-12-29 01:40:00 Hour dif: 14.833333333333334
+Trade Profit: 3.02 with percentage: 1.56% for BUY trade: 212
+--> Buy at: 2024-12-29 03:05:00 Sell at: 2024-12-29 06:00:00 Hour dif: 2.9166666666666665
+Trade Profit: 6.31 with percentage: 3.27% for BUY trade: 214
+--> Buy at: 2024-12-29 08:00:00 Sell at: 2024-12-29 13:35:00 Hour dif: 5.583333333333333
+Trade Loss: -0.01 with percentage: -0.01% for BUY trade: 216
+--> Buy at: 2024-12-29 15:00:00 Sell at: 2024-12-29 18:35:00 Hour dif: 3.5833333333333335
+Trade Profit: 0.10 with percentage: 0.05% for BUY trade: 218
+--> Buy at: 2024-12-29 19:30:00 Sell at: 2024-12-29 19:45:00 Hour dif: 0.25
+Trade Profit: 1.25 with percentage: 0.64% for BUY trade: 220
+--> Buy at: 2024-12-29 21:15:00 Sell at: 2024-12-29 22:00:00 Hour dif: 0.75
+Trade Loss: -0.77 with percentage: -0.40% for BUY trade: 222
+--> Buy at: 2024-12-30 02:25:00 Sell at: 2024-12-30 03:15:00 Hour dif: 0.8333333333333334
+Trade Profit: 6.80 with percentage: 3.58% for BUY trade: 224
+--> Buy at: 2024-12-30 05:40:00 Sell at: 2024-12-30 07:55:00 Hour dif: 2.25
+Initial Balance: 100.00
+Final Balance: 511.97
+Total Trades: 112
+Total Wins: 96
+Total Losses: 16
+Total Profit: 411.97
+Total Profit: $ 411.97
