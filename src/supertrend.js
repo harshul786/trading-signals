@@ -129,7 +129,7 @@ const supertrendSorted = (data, atrPeriod, multiplier, doFilter = true) => {
 };
 
 async function fetchOHLCV_V1(symbol, timeframe, limit = 10000) {
-  const exchange = new ccxt.binance();
+  const exchange = new ccxt.bitbns();
   const maxPerRequest = 200; // Binance's max limit per request
   let since = undefined; // Start with the most recent candles
   const candles = [];

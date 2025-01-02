@@ -166,7 +166,7 @@ function getTradeLimit(timeframe, days = 1) {
 (async () => {
   const symbol = "SOL/USDT";
   const timeframe = "5m";
-  const days = 365; // Test last 7 days
+  const days = 7; // Test last 7 days
   const limit = getTradeLimit(timeframe, days);
 
   // Fetch OHLCV data
