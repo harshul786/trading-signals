@@ -1,4 +1,3 @@
-const { fixObservableSubclass } = require("@apollo/client/utilities");
 const mongoose = require("mongoose");
 
 const tradeSchema = new mongoose.Schema({
