@@ -10,9 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.98.0",
+    "bcryptjs": "^2.4.3",
     "ccxt": "^4.4.43",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "moment-timezone": "^0.5.46"
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "moment-timezone": "^0.5.46",
+    "mongoose": "^8.9.3"
   }
 }
