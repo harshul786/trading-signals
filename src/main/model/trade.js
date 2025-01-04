@@ -1,19 +1,11 @@
 const mongoose = require("mongoose");
 
 const tradeSchema = new mongoose.Schema({
-  expectedBuyPrice: {
+  expectedExecutionPrice: {
     type: Number,
     required: true,
   },
-  actualBuyPrice: {
-    type: Number,
-    required: false,
-  },
-  expectedSellPrice: {
-    type: Number,
-    required: true,
-  },
-  actualSellPrice: {
+  actualExecutionPrice: {
     type: Number,
     required: false,
   },

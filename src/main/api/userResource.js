@@ -91,12 +91,12 @@ router.put("/reset-password", auth, async (req, res) => {
   }
 });
 
-router.post("/topup-check", async (req, res) => {
+router.post("/topup-check", auth, async (req, res) => {
   try {
-    const { userId, topupType, stableCoinSymbol, contractAddress } = req.body;
+    const { topupType, stableCoinSymbol, contractAddress } = req.body;
 
     // Validate user ID
-    const user = await User.findById(userId);
+    let user = req.user;
     if (!user) {
       return res.status(404).send({ error: "User not found" });
     }
@@ -113,6 +113,9 @@ router.post("/topup-check", async (req, res) => {
       });
     }
 
+    console.log("Required SOL balance:", requiredSolBalance);
+    console.log("Top-up type:", topupType);
+    console.log("wallet address:" + user.solWalletAddress);
     const balanceStatus = await validateWalletBalance(
       user.solWalletAddress,
       topupType,
@@ -123,7 +126,7 @@ router.post("/topup-check", async (req, res) => {
     if (!balanceStatus.isBalanceSufficient) {
       user.solBalance = balanceStatus.solBalance;
       user.topUpVerified = false;
-      await user.save();
+      user = await user.save();
       return res.status(400).send({
         error: `Insufficient wallet balance.`,
         walletAddress: user.solWalletAddress,
@@ -135,7 +138,7 @@ router.post("/topup-check", async (req, res) => {
       if (!stableCoinSymbol || !contractAddress) {
         user.solBalance = balanceStatus.solBalance;
         user.topUpVerified = false;
-        await user.save();
+        user = await user.save();
         return res.status(400).send({
           error:
             "For stable coin top-ups, both 'stableCoinSymbol' and 'contractAddress' are required.",
@@ -149,8 +152,6 @@ router.post("/topup-check", async (req, res) => {
       };
       user.otherBalance.push(newOtherBalance);
       user.solBalance = balanceStatus.solBalance;
-      user.topUpVerified = true;
-      await user.save();
 
       return res.status(200).send({
         message: "Stable coin top-up verified successfully!",
@@ -162,12 +163,16 @@ router.post("/topup-check", async (req, res) => {
         },
         currentSolBalance: balanceStatus.solBalance,
       });
+    } else {
+      user.solBalance = await getSolWalletBalance(user.solWalletAddress);
     }
 
+    user.topUpVerified = true;
+    user = await user.save();
     return res.status(200).send({
       message: "SOL top-up verified successfully!",
       walletAddress: user.solWalletAddress,
-      currentSolBalance: await getSolWalletBalance(user.solWalletAddress),
+      currentSolBalance: user.solBalance,
     });
   } catch (error) {
     console.error("Error during top-up:", error);

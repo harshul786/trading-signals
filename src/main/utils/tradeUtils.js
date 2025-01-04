@@ -27,6 +27,7 @@ const getSolWalletBalance = async (walletAddress) => {
 
 /**
  * Fetch the balance of a stable coin in the user's wallet.
+ * If the token account doesn't exist, return 0 as the balance.
  * @param {string} walletAddress - The public address of the wallet.
  * @param {string} mintAddress - The mint address of the stable coin.
  * @returns {Promise<number>} - The balance of the stable coin.
@@ -35,28 +36,30 @@ const getStableCoinBalance = async (walletAddress, mintAddress) => {
   try {
     const walletPublicKey = new PublicKey(walletAddress);
     const mintPublicKey = new PublicKey(mintAddress);
+
+    // Derive the associated token address
     const tokenAddress = await getAssociatedTokenAddress(
       mintPublicKey,
       walletPublicKey
     );
+
+    // Attempt to fetch the token account
     const tokenAccount = await getAccount(connection, tokenAddress);
+
+    // Fetch mint info for decimals
     const mintInfo = await getMint(connection, mintPublicKey);
 
     return Number(tokenAccount.amount) / Math.pow(10, mintInfo.decimals); // Convert to decimals
   } catch (error) {
+    if (error.name === "TokenAccountNotFoundError") {
+      console.warn(
+        `Token account not found for wallet: ${walletAddress}, returning 0 balance.`
+      );
+      return 0;
+    }
     console.error("Error fetching stable coin balance:", error);
     throw new Error("Failed to fetch stable coin balance.");
   }
-};
-
-/**
- * Placeholder for fetching the price of a stable coin.
- * @param {string} mintAddress - The mint address of the stable coin.
- * @returns {Promise<number>} - The price of the stable coin.
- */
-const getStableCoinPrice = async (mintAddress) => {
-  // Placeholder: Implement actual logic to fetch stable coin price
-  return 1; // Assuming 1:1 USD price
 };
 
 /**
@@ -65,7 +68,7 @@ const getStableCoinPrice = async (mintAddress) => {
  * @param {string} topupType - The type of top-up ("SOL" or "STABLE_COIN").
  * @param {number} requiredSolBalance - The minimum required balance in SOL.
  * @param {string} mintAddress - The mint address of the stable coin (optional).
- * @returns {Promise<boolean>} - Whether the wallet balance is sufficient.
+ * @returns {Promise<object>} - Whether the wallet balance is sufficient and details.
  */
 const validateWalletBalance = async (
   walletAddress,
@@ -77,7 +80,13 @@ const validateWalletBalance = async (
     const solBalance = await getSolWalletBalance(walletAddress);
 
     if (topupType === "SOL") {
-      return solBalance >= requiredSolBalance;
+      const isBalanceSufficient = solBalance >= requiredSolBalance;
+      return {
+        isBalanceSufficient,
+        solBalance,
+        stableCoinBalance: 0,
+        walletAddress,
+      };
     }
 
     if (topupType === "STABLE_COIN") {
@@ -89,74 +98,109 @@ const validateWalletBalance = async (
         walletAddress,
         mintAddress
       );
-      console.log("Stable coin balance:", stableCoinBalance);
-      const stableCoinPrice = await getStableCoinPrice(mintAddress);
+
+      const isBalanceSufficient =
+        solBalance >= requiredSolBalance && stableCoinBalance >= 15; // Assume stable coin value is 1:1 USD.
 
       return {
-        isBalanceSufficient:
-          solBalance >= requiredSolBalance &&
-          stableCoinBalance * stableCoinPrice >= 15,
-        stableCoinBalance,
+        isBalanceSufficient,
         solBalance,
+        stableCoinBalance,
+        walletAddress,
       };
     }
 
     throw new Error("Invalid top-up type.");
   } catch (error) {
     console.error("Error validating wallet balance:", error);
-    throw new Error("Failed to validate wallet balance.");
+    return {
+      error: "Insufficient wallet balance.",
+      walletAddress,
+      currentSolBalance: 0,
+    };
   }
 };
 
 // Helper function to calculate profit
 const calculateProfit = (trades, initialBalance) => {
-  let balance = initialBalance; // Start with the initial balance
-  let totalTrades = 0;
-  let totalWins = 0;
-  let totalLosses = 0;
-  let totalProfit = 0;
-  let openPosition = null; // Track the open BUY position
+  let actualBalance = initialBalance; // Actual balance for actual trades
+  let expectedBalance = initialBalance; // Expected balance for expected trades
+  let actualStats = {
+    totalTrades: 0,
+    totalWins: 0,
+    totalLosses: 0,
+    totalProfit: 0,
+  };
+  let expectedStats = {
+    totalTrades: 0,
+    totalWins: 0,
+    totalLosses: 0,
+    totalProfit: 0,
+  };
+  let openPosition = { actual: null, expected: null }; // Track open positions
 
   trades.forEach((trade) => {
-    // Only consider successful trades
-    if (trade.status !== "SUCCESS") return;
+    if (trade.status !== "SUCCESS") return; // Only consider successful trades
 
-    if (trade.type === "BUY") {
-      // Record the BUY trade details with actual slippage
-      const buyPrice = trade.actualBuyPrice * (1 + trade.actualSlippage);
-      openPosition = {
-        amount: trade.amount,
-        buyPrice,
-        fee: trade.fee,
-      };
-    } else if (trade.type === "SELL" && openPosition) {
-      // Calculate profit for the SELL trade
-      const sellPrice = trade.actualSellPrice * (1 - trade.actualSlippage);
-      const cost =
-        openPosition.buyPrice * openPosition.amount + openPosition.fee;
-      const earnings = sellPrice * openPosition.amount - trade.fee;
-      const profit = earnings - cost;
+    const { type, expectedExecutionPrice, actualExecutionPrice, amount, fee } =
+      trade;
 
-      balance += profit; // Update balance with profit/loss
-      totalTrades++;
-      totalProfit += profit;
+    if (type === "BUY") {
+      // Record BUY trade details for both actual and expected calculations
+      const actualBuyPrice = actualExecutionPrice; // No additional slippage since it's already included
+      const expectedBuyPrice = expectedExecutionPrice;
 
-      if (profit >= 0) {
-        totalWins++;
-      } else {
-        totalLosses++;
-      }
+      openPosition.actual = { amount, buyPrice: actualBuyPrice, fee };
+      openPosition.expected = { amount, buyPrice: expectedBuyPrice, fee };
+    } else if (
+      type === "SELL" &&
+      openPosition.actual &&
+      openPosition.expected
+    ) {
+      // Calculate actual profit
+      const actualSellPrice = actualExecutionPrice; // Already includes slippage
+      const actualCost =
+        openPosition.actual.buyPrice * openPosition.actual.amount +
+        openPosition.actual.fee;
+      const actualEarnings = actualSellPrice * openPosition.actual.amount - fee;
+      const actualProfit = actualEarnings - actualCost;
 
-      openPosition = null; // Reset position after SELL
+      actualBalance += actualProfit;
+      actualStats.totalTrades++;
+      actualStats.totalProfit += actualProfit;
+      actualProfit >= 0 ? actualStats.totalWins++ : actualStats.totalLosses++;
+
+      // Calculate expected profit
+      const expectedSellPrice = expectedExecutionPrice; // No slippage adjustment needed
+      const expectedCost =
+        openPosition.expected.buyPrice * openPosition.expected.amount +
+        openPosition.expected.fee;
+      const expectedEarnings =
+        expectedSellPrice * openPosition.expected.amount - fee;
+      const expectedProfit = expectedEarnings - expectedCost;
+
+      expectedBalance += expectedProfit;
+      expectedStats.totalTrades++;
+      expectedStats.totalProfit += expectedProfit;
+      expectedProfit >= 0
+        ? expectedStats.totalWins++
+        : expectedStats.totalLosses++;
+
+      // Reset positions
+      openPosition.actual = null;
+      openPosition.expected = null;
     }
   });
 
   return {
-    finalBalance: balance,
-    totalTrades,
-    totalWins,
-    totalLosses,
-    totalProfit,
+    actualProfit: {
+      finalBalance: actualBalance,
+      ...actualStats,
+    },
+    expectedProfit: {
+      finalBalance: expectedBalance,
+      ...expectedStats,
+    },
   };
 };
 

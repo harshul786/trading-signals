@@ -2,6 +2,7 @@ const express = require("express");
 const Trade = require("../model/trade");
 const auth = require("../middleware/auth");
 const { calculateProfit } = require("../utils/tradeUtils");
+const User = require("../model/user");
 const router = express.Router();
 
 // Create a new trade
@@ -10,8 +11,7 @@ router.post("/", async (req, res) => {
     const {
       pair,
       currentSymbol,
-      buyPrice,
-      sellPrice,
+      expectedExecutionPrice,
       slippage,
       creationDate,
       type,
@@ -20,11 +20,10 @@ router.post("/", async (req, res) => {
 
     const trade = new Trade({
       userId,
-      actualBuyPrice: buyPrice,
-      actualSellPrice: sellPrice,
+      expectedExecutionPrice: expectedExecutionPrice,
       amount: 0,
       fee: 0,
-      actualSlippage: slippage,
+      expectedSlippage: slippage,
       status: "PENDING",
       type: type,
       creationDate,
@@ -69,8 +68,7 @@ router.get("/:id", async (req, res) => {
 router.put("/:id/success", async (req, res) => {
   try {
     const {
-      actualBuyPrice,
-      actualSellPrice,
+      actualExecutionPrice,
       actualSlippage,
       fee,
       amount,
@@ -80,8 +78,7 @@ router.put("/:id/success", async (req, res) => {
     if (!trade) {
       return res.status(404).json({ error: "Trade not found" });
     }
-    trade.actualBuyPrice = actualBuyPrice;
-    trade.actualSellPrice = actualSellPrice;
+    trade.actualExecutionPrice = actualExecutionPrice;
     trade.actualSlippage = actualSlippage;
     trade.transactionSignature = transactionSignature;
     trade.fee += fee;
