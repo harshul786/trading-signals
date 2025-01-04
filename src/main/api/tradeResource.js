@@ -3,7 +3,9 @@ const Trade = require("../model/trade");
 const auth = require("../middleware/auth");
 const { calculateProfit } = require("../utils/tradeUtils");
 const User = require("../model/user");
+const { sendTelegramNotification } = require("../utils/telegram");
 const router = express.Router();
+const moment = require("moment-timezone");
 
 // Create a new trade
 router.post("/", async (req, res) => {
@@ -33,6 +35,18 @@ router.post("/", async (req, res) => {
         current: currentSymbol,
       },
     });
+
+    const user = await User.findById(trade.userId);
+    sendTelegramNotification(`📈 *New Trade Created* 📈
+      *Trade ID:* ${trade._id}
+      *Pair:* ${pair}
+      *Type:* ${type}
+      *Expected Price:* ${expectedExecutionPrice}
+      *Slippage:* ${slippage}
+      *User ID:* ${user.email}
+      *Date:* ${moment(creationDate)
+        .tz("Asia/Kolkata")
+        .format("YYYY-MM-DD HH:mm:ss")}`);
 
     await trade.save();
     res.status(201).json(trade);
@@ -74,7 +88,7 @@ router.put("/:id/success", async (req, res) => {
       amount,
       transactionSignature,
     } = req.body;
-    const trade = await Trade.findById(req.params.id);
+    let trade = await Trade.findById(req.params.id);
     if (!trade) {
       return res.status(404).json({ error: "Trade not found" });
     }
@@ -85,7 +99,51 @@ router.put("/:id/success", async (req, res) => {
     trade.amount = amount;
     trade.status = "SUCCESS";
     trade.lastModifiedDate = new Date();
-    await trade.save();
+    trade = await trade.save();
+    const user = await User.findById(trade.userId);
+    const msg = `🎉 *Trade Success* 🎉
+      *Trade ID:* ${trade._id}
+      *Pair:* ${trade.symbols.pair}
+      *Type:* ${trade.type}
+      *Amount:* ${trade.amount}
+      *Expected Price:* ${trade.expectedExecutionPrice}
+      *Actual Price:* ${trade.actualExecutionPrice}
+      *User:* ${user.email}
+      *Date:* ${moment(trade.creationDate)
+        .tz("Asia/Kolkata")
+        .format("YYYY-MM-DD HH:mm:ss")}`;
+
+    if (trade.type === "SELL") {
+      const lastBuy = await Trade.findOne({
+        userId: trade.userId,
+        type: "BUY",
+        "symbols.pair": trade.symbols.pair,
+      }).sort({ creationDate: -1 });
+
+      if (lastBuy) {
+        // calculate profit
+        const profit =
+          trade.actualExecutionPrice - lastBuy.actualExecutionPrice - trade.fee;
+        const profitPercentage = (profit / lastBuy.actualExecutionPrice) * 100;
+        const expectedProfit =
+          trade.expectedExecutionPrice -
+          lastBuy.expectedExecutionPrice -
+          trade.fee;
+        const expectedProfitPercentage =
+          (expectedProfit / lastBuy.expectedExecutionPrice) * 100;
+        msg += `
+      *Profit:* ${profit.toFixed(2)} (${profitPercentage.toFixed(2)}%)
+      *Expected Profit:* ${expectedProfit.toFixed(
+        2
+      )} (${expectedProfitPercentage.toFixed(2)}%)`;
+      } else {
+        // Handle case when no previous buy trade is found
+        msg += `
+      *Profit:* N/A
+      *Expected Profit:* N/A`;
+      }
+    }
+    sendTelegramNotification(msg);
     res.json(trade);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -122,6 +180,18 @@ router.put("/:id/fail", async (req, res) => {
     trade.transactionSignature = transactionSignature;
     trade.lastModifiedDate = new Date();
     await trade.save();
+
+    const user = await User.findById(trade.userId);
+    sendTelegramNotification(` 🚫 *Trade Failure* 🚫
+      *Trade ID:* ${trade._id}
+      *Pair:* ${trade.symbols.pair}
+      *Type:* ${trade.type}
+      *Amount:* ${trade.amount}
+      *Expected Price:* ${trade.expectedExecutionPrice}
+      *User:* ${user.email}
+      *Date:* ${moment(trade.lastModifiedDate)
+        .tz("Asia/Kolkata")
+        .format("YYYY-MM-DD HH:mm:ss")}`);
     res.json(trade);
   } catch (error) {
     res.status(400).json({ error: error.message });
