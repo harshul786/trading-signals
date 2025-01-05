@@ -1,5 +1,8 @@
 const moment = require("moment-timezone");
-const { supertrendSorted, fetchOHLCV_V2 } = require("./supertrend");
+const {
+  supertrendSorted,
+  fetchOHLCV_V2,
+} = require("./../main/utils/supertrend");
 const ccxt = require("ccxt");
 
 // Fetch OHLCV data
@@ -41,7 +44,7 @@ function calculateProfit(
   console.log(results);
 
   results.forEach((result, index) => {
-    const price = parseFloat(result.supertrend.toFixed(2)); // Ensure price is a number with two decimals
+    const price = parseFloat(result.supertrend).toFixed(5); // Ensure price is a number with two decimals
 
     if (result.signal === "BUY" && !position) {
       // Apply slippage for the BUY price
@@ -63,7 +66,8 @@ function calculateProfit(
       const tradeProfit =
         position.quantity * (sellPrice - position.entryPrice) -
         transactionFee * 2; // Fee for both buy and sell
-      const tradeProfitPercentage = (tradeProfit / position.entryPrice) * 100;
+      const tradeProfitPercentage =
+        ((sellPrice - position.entryPrice) / position.entryPrice) * 100;
 
       balance += tradeProfit; // Update the balance after the trade
       totalTrades++;
@@ -90,7 +94,9 @@ function calculateProfit(
           "Sell at:",
           sellTime.format("YYYY-MM-DD HH:mm:ss"),
           "Hour dif:",
-          hours
+          hours.toFixed(2),
+          "current balance:",
+          balance.toFixed(2)
         );
       } else {
         const buyTime = moment(position.timestamp).tz("Asia/Kolkata");
@@ -113,7 +119,9 @@ function calculateProfit(
           "Sell at:",
           sellTime.format("YYYY-MM-DD HH:mm:ss"),
           "Hour dif:",
-          hours
+          hours,
+          "current balance:",
+          balance.toFixed(2)
         );
       }
 
@@ -166,7 +174,7 @@ function getTradeLimit(timeframe, days = 1) {
 (async () => {
   const symbol = "SOL/USDT";
   const timeframe = "5m";
-  const days = 7; // Test last 7 days
+  const days = 30; // Test last 7 days
   const limit = getTradeLimit(timeframe, days);
 
   // Fetch OHLCV data
@@ -174,8 +182,8 @@ function getTradeLimit(timeframe, days = 1) {
   const data = await fetchOHLCV_V2(symbol, timeframe, days);
 
   // Supertrend Parameters
-  const atrLength = 10;
-  const multiplier = 3;
+  const atrLength = 20; // better profit percentile ~ 99.5%
+  const multiplier = 4;
 
   // Calculate Supertrend
   const results = supertrendSorted(data, atrLength, multiplier);

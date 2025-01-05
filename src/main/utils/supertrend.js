@@ -178,7 +178,7 @@ async function fetchOHLCV_V1(symbol, timeframe, limit = 10000) {
 }
 
 async function fetchOHLCV_V2(symbol, timeframe, days = 7) {
-  const exchange = new ccxt.binance();
+  const exchange = new ccxt.huobi();
   const maxPerRequest = 200; // Binance's max limit per request
   const limit = 10000; // Maximum number of candles to fetch
   let sinceMilliSecond = Date.now() - days * 24 * 60 * 60 * 1000; // Start 30 days ago
@@ -221,6 +221,18 @@ async function fetchOHLCV_V2(symbol, timeframe, days = 7) {
     await new Promise((resolve) => setTimeout(resolve, 100)); // 100ms delay
   }
 
+  candles.sort((a, b) => a.timestamp - b.timestamp); // Sort the candles by timestamp in increasing order
+
+  console.log("-> Last candle==>", candles.splice(-1));
+  // // Filter candles based on timestamp
+  // const filteredCandles = candles.filter((candle) => {
+  //   const timestamp = new Date(candle.timestamp);
+  //   const filterTimestamp = new Date("2025-01-05T10:45:00");
+  //   return timestamp <= filterTimestamp;
+  // });
+
+  // return filteredCandles;
+
   return candles;
 }
 
@@ -237,8 +249,8 @@ const currentSignal = async (
   response.ohlcvDataLength = data.length;
 
   // Supertrend Parameters
-  const atrLength = 10;
-  const multiplier = 3;
+  const atrLength = 20;
+  const multiplier = 4;
 
   // Calculate Supertrend
   const results = supertrendSorted(
@@ -261,7 +273,7 @@ const currentSignal = async (
 
   // Check if the last candle is in the current timeframe
   if (lastCandle) {
-    response.signal = lastCandle.signal ? lastCandle.signal.toUpperCase : null;
+    response.signal = lastCandle.signal ? lastCandle.signal : null;
   }
 
   const lastSignaledCandle = results
@@ -284,6 +296,32 @@ const currentSignal = async (
 //     console.log("Current Signal:", signal);
 //   }
 // );
+
+// let retryCount = 0;
+// let x = 10; // Retry every x seconds
+// let y = 3; // Retry for y minutes
+// const maxRetries = (y * 60) / x; // Total retries = y minutes * 60 seconds / x seconds
+
+// const retryInterval = setInterval(async () => {
+//   const currentS = await currentSignal(
+//     (symbol = "SOL/USDT"),
+//     (timeframe = "5m"),
+//     (atrForDays = 1)
+//   );
+//   if (currentS.signal) {
+//     console.log("Current Signal:", currentS, "Retry count:", retryCount);
+//     clearInterval(retryInterval); // Stop retrying once a signal is received
+//     return currentS;
+//   } else {
+//     retryCount++;
+//     console.log("Retrying...", retryCount, "current signal:", currentS);
+
+//     if (retryCount >= maxRetries) {
+//       console.log("Max retries reached. No signal received.");
+//       clearInterval(retryInterval); // Stop retrying after reaching max retries
+//     }
+//   }
+// }, 1000 * x); // Retry after 10 seconds
 
 module.exports = {
   currentSignal,
