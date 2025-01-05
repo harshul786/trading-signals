@@ -106,7 +106,7 @@ router.post("/topup-check", auth, async (req, res) => {
     if (topupType === "SOL") {
       requiredSolBalance = 0.07;
     } else if (topupType === "STABLE_COIN") {
-      requiredSolBalance = 0.03;
+      requiredSolBalance = 0.02;
     } else {
       return res.status(400).send({
         error: "Invalid top-up type. Must be either 'SOL' or 'STABLE_COIN'.",

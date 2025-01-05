@@ -18,6 +18,8 @@ router.post("/", async (req, res) => {
       creationDate,
       type,
       userId,
+      planId,
+      timeFrame,
     } = req.body;
 
     const trade = new Trade({
@@ -30,6 +32,8 @@ router.post("/", async (req, res) => {
       type: type,
       creationDate,
       lastModifiedDate: new Date(),
+      planId,
+      timeFrame,
       symbols: {
         pair: pair,
         current: currentSymbol,
