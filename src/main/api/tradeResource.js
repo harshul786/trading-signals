@@ -111,6 +111,8 @@ router.post("/:id/success", async (req, res) => {
       *Amount:* ${trade.amount}
       *Expected Price:* ${trade.expectedExecutionPrice}
       *Actual Price:* ${trade.actualExecutionPrice}
+      *Expected Slippage:* ${trade.expectedSlippage}
+      *Actual Slippage:* ${trade.actualSlippage}
       *User:* ${user.email}
       *Date:* ${moment(trade.creationDate)
         .tz("Asia/Kolkata")
