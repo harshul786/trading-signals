@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
       timeFrame,
     } = req.body;
 
-    const trade = new Trade({
+    let trade = new Trade({
       userId,
       expectedExecutionPrice: expectedExecutionPrice,
       amount: 0,
@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
         current: currentSymbol,
       },
     });
-
+    trade = await trade.save();
     const user = await User.findById(trade.userId);
     sendTelegramNotification(`📈 *New Trade Created* 📈
       *Trade ID:* ${trade._id}
@@ -52,7 +52,6 @@ router.post("/", async (req, res) => {
         .tz("Asia/Kolkata")
         .format("YYYY-MM-DD HH:mm:ss")}`);
 
-    await trade.save();
     res.status(201).json(trade);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -83,7 +82,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // Update a trade by ID
-router.put("/:id/success", async (req, res) => {
+router.post("/:id/success", async (req, res) => {
   try {
     const {
       actualExecutionPrice,
@@ -105,7 +104,7 @@ router.put("/:id/success", async (req, res) => {
     trade.lastModifiedDate = new Date();
     trade = await trade.save();
     const user = await User.findById(trade.userId);
-    const msg = `🎉 *Trade Success* 🎉
+    let msg = `🎉 *Trade Success* 🎉
       *Trade ID:* ${trade._id}
       *Pair:* ${trade.symbols.pair}
       *Type:* ${trade.type}
@@ -154,7 +153,7 @@ router.put("/:id/success", async (req, res) => {
   }
 });
 
-router.put("/:id/pending", async (req, res) => {
+router.post("/:id/pending", async (req, res) => {
   try {
     const { fee, transactionSignature } = req.body;
     const trade = await Trade.findById(req.params.id);
@@ -172,7 +171,7 @@ router.put("/:id/pending", async (req, res) => {
   }
 });
 
-router.put("/:id/fail", async (req, res) => {
+router.post("/:id/fail", async (req, res) => {
   try {
     const { fee, transactionSignature } = req.body;
     const trade = await Trade.findById(req.params.id);
