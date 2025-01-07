@@ -129,9 +129,11 @@ router.post("/:id/success", async (req, res) => {
           trade.actualExecutionPrice - lastBuy.actualExecutionPrice - trade.fee;
         const profitPercentage = (profit / lastBuy.actualExecutionPrice) * 100;
         const expectedProfit =
-          trade.expectedExecutionPrice -
-          lastBuy.expectedExecutionPrice -
-          trade.fee;
+          trade.expectedExecutionPrice * (1 + trade.expectedSlippage / 100) -
+          lastBuy.expectedExecutionPrice *
+            (1 - lastBuy.expectedSlippage / 100) -
+          trade.fee -
+          lastBuy.fee;
         const expectedProfitPercentage =
           (expectedProfit / lastBuy.expectedExecutionPrice) * 100;
         msg += `
